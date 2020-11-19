@@ -52,6 +52,8 @@ OAuth.registerService(
       ?.map(({ Address: emailAddress }) => emailAddress)
       .join(',');
 
+    delete person['$type'];
+
     return {
       serviceData: {
         id: user?.UserId,
