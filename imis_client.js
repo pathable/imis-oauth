@@ -1,3 +1,7 @@
+import Cookies from 'js-cookie';
+
+const IMIS_CREDENTIALS = 'imisKey';
+
 Imis = {};
 
 Imis.requestCredential = (options, credentialRequestCompleteCallback) => {
@@ -14,10 +18,12 @@ Imis.requestCredential = (options, credentialRequestCompleteCallback) => {
 
   const loginStyle = 'redirect';
 
+  Cookies.set(IMIS_CREDENTIALS, JSON.stringify({ ...config, credentialToken }));
+
   OAuth.launchLogin({
     loginService: 'imis',
     loginStyle,
-    loginUrl: config.loginUrl,
+    loginUrl: config.signInUrl,
     credentialRequestCompleteCallback,
     credentialToken,
   });

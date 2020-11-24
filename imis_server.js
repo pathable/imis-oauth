@@ -48,17 +48,20 @@ OAuth.registerService(
       },
     });
 
-    const emailsFormatted = personEmails?.['$values']
-      ?.map(({ Address: emailAddress }) => emailAddress)
-      .join(',');
+    const emailsFormatted = personEmails?.['$values']?.map(
+      ({ Address: emailAddress }) => emailAddress
+    );
 
     delete person['$type'];
 
     return {
+      serviceName: 'imis',
       serviceData: {
         id: user?.UserId,
         accessToken,
-        ...person,
+        email: partyRest?.Email,
+        firstName: person?.FirstName,
+        lastName: person?.LastName,
       },
       options: {
         profile: { firstName: person?.FirstName, lastName: person?.LastName },

@@ -1,22 +1,22 @@
 Package.describe({
-  summary: "Imis OAuth flow",
-  version: "1.0.1",
-  name: "pathable:imis-oauth",
-  git: "https://github.com/pathable/imis-oauth",
+  summary: 'Imis OAuth flow',
+  version: '1.0.3',
+  name: 'pathable:imis-oauth',
+  git: 'https://github.com/pathable/imis-oauth',
 });
 
-Package.onUse((api) => {
-  api.versionsFrom("1.10.3-beta.9");
+Package.onUse(api => {
+  api.versionsFrom('1.10.3-beta.9');
 
-  api.use("ecmascript", ["client", "server"]);
-  api.use("oauth2", ["client", "server"]);
-  api.use("oauth", ["client", "server"]);
-  api.use("http", "server");
-  api.use("random", "client");
-  api.use("service-configuration", ["client", "server"]);
+  api.use('ecmascript', ['client', 'server']);
+  api.use('oauth2', ['client', 'server']);
+  api.use('oauth', ['client', 'server']);
+  api.use('http', 'server');
+  api.use('random', 'client');
+  api.use('service-configuration', ['client', 'server']);
 
-  api.addFiles("imis_client.js", "client");
-  api.addFiles("imis_server.js", "server");
+  api.addFiles('imis_client.js', 'client');
+  api.addFiles('imis_server.js', 'server');
 
-  api.export("Imis");
+  api.export('Imis');
 });
