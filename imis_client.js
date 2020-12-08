@@ -16,7 +16,7 @@ Imis.requestCredential = (options, credentialRequestCompleteCallback) => {
   const config = options.config;
   const credentialToken = Random.secret();
 
-  // An strange problem happen when defines the last key (imisKey) and back to the Pathable side
+  // A strange problem happen when defines the last key (imisKey) and back to the Pathable side
   // it was overriding the SCOPE cookies, causing us to lose these cookies
   // the solution below merge the current SCOPE cookie and adds the last data from cookie key (imisKey) to use the SCOPE key
   // with this we won't lose the data and be able to complete the process
