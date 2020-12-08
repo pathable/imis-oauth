@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Imis OAuth flow',
-  version: '1.0.3',
+  version: '1.0.4',
   name: 'pathable:imis-oauth',
   git: 'https://github.com/pathable/imis-oauth',
 });
